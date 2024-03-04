@@ -152,6 +152,7 @@ do
                 }
             }
 
+            var joinedDogCharacteristics = string.Join(", ", dogCharacteristics);
             bool noMatchesDog = true;
             string dogDescription = "";
             
@@ -173,7 +174,7 @@ do
                     // #5 update "searching" message to show countdown 
                         foreach (string icon in searchingIcons)
                         {
-                            Console.Write($"\rsearching our dog {ourAnimals[i, 3]} for {dogCharacteristics} {icon}");
+                            Console.Write($"\rsearching our dog {ourAnimals[i, 3]} for {joinedDogCharacteristics} {icon}");
                             Thread.Sleep(250);
                         }
                         
@@ -199,7 +200,7 @@ do
 
             if (noMatchesDog)
             {
-                Console.WriteLine("None of our dogs are a match found for: " + dogCharacteristics);
+                Console.WriteLine("None of our dogs are a match found for: " + joinedDogCharacteristics);
             }
 
             Console.WriteLine("\n\rPress the Enter key to continue");
